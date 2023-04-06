@@ -240,6 +240,9 @@ console.log(
     var optionsForm = document.getElementById('options')
     var turndownService = new window.TurndownService(options())
 
+    // EBW-specific keep options
+    turndownService.keep(['ebwspan', 'ebwdiv', 'ebwblockquote'])
+
     input.addEventListener('input', update)
 
     optionsForm.addEventListener('change', function () {
