@@ -234,6 +234,8 @@ console.log(
 
 <footer><p>Turndown is copyright © 2017 <a href="http://www.domchristie.co.uk/">Dom Christie</a> and is released under the MIT license</p></footer>
 <script>
+  const ebwTags = ['ebwtag', 'ebwspan', 'ebwdiv', 'ebwblockquote'];
+
   ;(function () {
     var input = document.getElementById('input')
     var output = document.getElementById('output')
@@ -241,12 +243,13 @@ console.log(
     var turndownService = new window.TurndownService(options())
 
     // EBW-specific keep options
-    turndownService.keep(['ebwtag', 'ebwspan', 'ebwdiv', 'ebwblockquote'])
+    turndownService.keep(ebwTags)
 
     input.addEventListener('input', update)
 
     optionsForm.addEventListener('change', function () {
       turndownService = new window.TurndownService(options())
+      turndownService.keep(ebwTags)
       update()
     })
 
