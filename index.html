@@ -241,7 +241,7 @@ console.log(
     var turndownService = new window.TurndownService(options())
 
     // EBW-specific keep options
-    turndownService.keep(['ebwspan', 'ebwdiv', 'ebwblockquote'])
+    turndownService.keep(['ebwtag', 'ebwspan', 'ebwdiv', 'ebwblockquote'])
 
     input.addEventListener('input', update)
 
